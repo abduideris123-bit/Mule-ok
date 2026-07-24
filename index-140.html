@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#17140F">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="መኖ መዝገብ">
+<title>የመኖ መዝገብ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Ethiopic:wght@500;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#17140F;
+    --surface:#211D15;
+    --surface-2:#2A2419;
+    --border:#3A331F;
+    --text:#F3ECDA;
+    --text-dim:#B8AD8F;
+    --gold:#D9A63C;
+    --gold-dim:rgba(217,166,60,0.14);
+    --green:#7A9B4E;
+    --green-dim:rgba(122,155,78,0.16);
+    --rust:#B54A2C;
+    --rust-dim:rgba(181,74,44,0.16);
+    --radius:14px;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0; padding:0; background:var(--bg); color:var(--text);
+    font-family:'Noto Sans Ethiopic','Inter',sans-serif; overscroll-behavior-y:none;}
+  .mono{font-family:'IBM Plex Mono','Noto Sans Ethiopic',monospace;}
+  .disp{font-family:'Noto Serif Ethiopic',serif;}
+  #app{max-width:520px; margin:0 auto; min-height:100vh; padding-bottom:84px; position:relative;}
+
+  /* grain texture divider */
+  .hatch{height:6px; background:repeating-linear-gradient(135deg, var(--border) 0 3px, transparent 3px 8px); opacity:.6; margin:0 0 2px;}
+
+  header.top{padding:22px 18px 14px; position:sticky; top:0; background:var(--bg); z-index:5; border-bottom:1px solid var(--border);}
+  header.top h1{font-size:21px; margin:0 0 2px; letter-spacing:.2px;}
+  header.top p{margin:0; font-size:12.5px; color:var(--text-dim);}
+
+  .dash-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:16px 18px 6px;}
+  .dash-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:14px;}
+  .dash-card .lbl{font-size:11.5px; color:var(--text-dim); margin-bottom:6px;}
+  .dash-card .val{font-size:19px; font-weight:600;}
+  .dash-card.gold .val{color:var(--gold);}
+  .dash-card.green .val{color:var(--green);}
+  .dash-card.rust .val{color:var(--rust);}
+
+  section{padding:6px 18px 18px;}
+  .section-title{font-size:13px; color:var(--text-dim); margin:18px 0 8px; display:flex; justify-content:space-between; align-items:center;}
+
+  .card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:14px; margin-bottom:10px;}
+  .row{display:flex; justify-content:space-between; align-items:center; gap:8px;}
+  .row + .row{margin-top:6px;}
+
+  /* silo gauge */
+  .silo-wrap{display:flex; align-items:center; gap:10px;}
+  .silo{width:14px; height:40px; border-radius:5px; background:var(--surface-2); border:1px solid var(--border); position:relative; overflow:hidden; flex-shrink:0;}
+  .silo .fill{position:absolute; bottom:0; left:0; right:0; border-radius:0 0 4px 4px;}
+  .prod-name{font-weight:600; font-size:15px;}
+  .prod-meta{font-size:12px; color:var(--text-dim); margin-top:2px;}
+
+  input, select, textarea{
+    width:100%; background:var(--surface-2); border:1px solid var(--border); color:var(--text);
+    border-radius:10px; padding:11px 12px; font-size:15px; font-family:inherit; margin-top:5px;
+  }
+  input:focus, select:focus, textarea:focus{outline:none; border-color:var(--gold);}
+  label{font-size:12.5px; color:var(--text-dim); display:block; margin-top:10px;}
+  label:first-child{margin-top:0;}
+
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:6px; border:none; border-radius:10px;
+    padding:12px 16px; font-size:14.5px; font-weight:600; font-family:inherit; cursor:pointer; width:100%; margin-top:14px;}
+  .btn-gold{background:var(--gold); color:#1C1708;}
+  .btn-green{background:var(--green); color:#12200A;}
+  .btn-outline{background:transparent; border:1px solid var(--border); color:var(--text);}
+  .btn-rust{background:var(--rust); color:#fff;}
+  .btn-sm{width:auto; padding:7px 12px; font-size:12.5px; margin-top:0;}
+  .btn-row{display:flex; gap:8px; margin-top:14px;}
+  .btn-row .btn{margin-top:0;}
+
+  .pill{font-size:11px; padding:3px 9px; border-radius:20px; font-weight:600;}
+  .pill.cash{background:var(--green-dim); color:var(--green);}
+  .pill.debt{background:var(--rust-dim); color:var(--rust);}
+
+  .empty{text-align:center; color:var(--text-dim); font-size:13.5px; padding:30px 10px;}
+
+  /* bottom nav */
+  nav.tabbar{position:fixed; bottom:0; left:0; right:0; background:var(--surface); border-top:1px solid var(--border);
+    display:flex; max-width:520px; margin:0 auto; z-index:10;}
+  nav.tabbar button{flex:1; background:none; border:none; color:var(--text-dim); padding:10px 2px 8px; font-family:inherit;
+    display:flex; flex-direction:column; align-items:center; gap:3px; font-size:10.5px; cursor:pointer;}
+  nav.tabbar button svg{width:20px; height:20px;}
+  nav.tabbar button.active{color:var(--gold);}
+  nav.tabbar button.active svg{stroke:var(--gold);}
+
+  .fab-add{position:fixed; bottom:78px; right:calc(50% - 260px + 18px); background:var(--gold); color:#1C1708; border:none;
+    width:52px; height:52px; border-radius:50%; font-size:26px; box-shadow:0 6px 16px rgba(0,0,0,.4); cursor:pointer; z-index:9;}
+  @media(max-width:520px){ .fab-add{right:18px;} }
+
+  .sheet-overlay{position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:20; display:none; align-items:flex-end; justify-content:center;}
+  .sheet-overlay.open{display:flex;}
+  .sheet{background:var(--surface); width:100%; max-width:520px; border-radius:20px 20px 0 0; padding:18px 18px 26px;
+    max-height:88vh; overflow-y:auto; animation:up .18s ease-out;}
+  @keyframes up{from{transform:translateY(24px); opacity:0;} to{transform:translateY(0); opacity:1;}}
+  .sheet h3{margin:0 0 4px; font-size:17px;}
+  .sheet .close{position:absolute; margin-top:-6px;}
+  .sheet-head{display:flex; justify-content:space-between; align-items:center;}
+  .sheet-head span{font-size:22px; color:var(--text-dim); cursor:pointer; padding:4px 8px;}
+
+  .stat-row{display:flex; justify-content:space-between; font-size:13.5px; padding:6px 0; border-bottom:1px dashed var(--border);}
+  .stat-row:last-child{border-bottom:none;}
+  .stat-row b{font-family:'IBM Plex Mono';}
+
+  .toast{position:fixed; bottom:100px; left:50%; transform:translateX(-50%); background:var(--gold); color:#1C1708;
+    padding:10px 18px; border-radius:30px; font-size:13.5px; font-weight:600; z-index:30; opacity:0; transition:opacity .25s;}
+  .toast.show{opacity:1;}
+
+  small.hint{display:block; font-size:11.5px; color:var(--text-dim); margin-top:4px;}
+
+  .chart-toggle{display:flex; gap:6px; margin-bottom:10px;}
+  .chart-toggle button{flex:1; background:var(--surface-2); border:1px solid var(--border); color:var(--text-dim);
+    padding:7px; border-radius:8px; font-size:12px; font-family:inherit; cursor:pointer;}
+  .chart-toggle button.active{background:var(--gold-dim); color:var(--gold); border-color:var(--gold);}
+  .bar-chart{display:flex; align-items:flex-end; gap:6px; height:110px; padding:6px 2px 0;}
+  .bar-col{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; gap:4px;}
+  .bar-col .bar{width:100%; max-width:22px; border-radius:4px 4px 2px 2px; background:var(--gold); min-height:2px;}
+  .bar-col .bar-lbl{font-size:9.5px; color:var(--text-dim); white-space:nowrap;}
+</style>
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <h1 class="disp">🌾 የመኖ መዝገብ</h1>
+    <p id="dateNow"></p>
+  </header>
+  <div id="installBanner" style="display:none; margin:12px 18px 0; background:var(--gold-dim); border:1px solid var(--gold); border-radius:var(--radius); padding:12px 14px; align-items:center; justify-content:space-between; gap:10px;">
+    <div style="display:flex; align-items:center; gap:10px; flex:1; min-width:0;">
+      <span style="font-size:22px;">📲</span>
+      <div style="min-width:0;">
+        <div style="font-size:13.5px; font-weight:600;">መተግበሪያውን Install ያድርጉ</div>
+        <div style="font-size:11.5px; color:var(--text-dim);">በስልክዎ ላይ በቀጥታ ይጫኑ፣ ያለ ኢንተርኔት ይክፈቱት</div>
+      </div>
+    </div>
+    <button id="installBtn" class="btn btn-gold btn-sm" style="flex-shrink:0;">Install</button>
+  </div>
+  <div id="view"></div>
+</div>
+
+<button class="fab-add" id="fabAdd">+</button>
+
+<nav class="tabbar">
+  <button data-tab="dash" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V10M12 19V4M20 19V13"/></svg>ዳሽቦርድ</button>
+  <button data-tab="products"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8M12 13v8"/></svg>እቃዎች</button>
+  <button data-tab="sales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h2l2.2 12.4a2 2 0 002 1.6h8.6a2 2 0 002-1.6L21 7H6"/></svg>ሽያጭ</button>
+  <button data-tab="debt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 8a5 5 0 10-10 0M5 12h14l-1.5 8h-11z"/></svg>ዱቤ</button>
+  <button data-tab="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 00-.1-1.2l2-1.6-2-3.4-2.4.9a7 7 0 00-2-1.2L14 3h-4l-.5 2.5a7 7 0 00-2 1.2l-2.4-.9-2 3.4 2 1.6a7 7 0 000 2.4l-2 1.6 2 3.4 2.4-.9a7 7 0 002 1.2L10 21h4l.5-2.5a7 7 0 002-1.2l2.4.9 2-3.4-2-1.6c.07-.4.1-.8.1-1.2z"/></svg>ቅንብር</button>
+</nav>
+
+<div class="sheet-overlay" id="overlay"><div class="sheet" id="sheetBody"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+/* ---------------- STATE ---------------- */
+const KEY='feedLedgerData_v1';
+function loadState(){
+  try{
+    const raw=localStorage.getItem(KEY);
+    if(raw){
+      const s=JSON.parse(raw);
+      if(s.settings && s.settings.autoBackup===undefined) s.settings.autoBackup=true;
+      return s;
+    }
+  }catch(e){}
+  return {products:[], purchases:[], sales:[], payments:[], settings:{botToken:'', chatId:'', autoBackup:true}};
+}
+let state=loadState();
+function save(){ localStorage.setItem(KEY, JSON.stringify(state)); }
+function uid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,7); }
+function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
+function ethDate(d, opts){
+  try{
+    return new Intl.DateTimeFormat('am-ET-u-ca-ethiopic', opts||{year:'numeric',month:'long',day:'numeric'}).format(d);
+  }catch(e){ return d.toLocaleDateString('am-ET'); }
+}
+function todayStr(){ return ethDate(new Date(), {weekday:'long', year:'numeric', month:'long', day:'numeric'}); }
+document.getElementById('dateNow').textContent=todayStr();
+
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 1800);
+}
+
+/* ---------------- derived helpers ---------------- */
+function stockOf(pid){
+  const p=state.products.find(x=>x.id===pid);
+  if(!p) return 0;
+  let s=p.initialStock||0;
+  state.purchases.forEach(pu=>{ if(pu.productId===pid) s+=pu.qty; });
+  state.sales.forEach(sa=>{ if(sa.productId===pid) s-=sa.qty; });
+  return s;
+}
+function totalStockValue(){
+  return state.products.reduce((sum,p)=> sum + stockOf(p.id)*p.costPrice, 0);
+}
+function totalProfit(){
+  return state.sales.reduce((sum,s)=> sum + s.profit, 0);
+}
+function todaySalesTotal(){
+  const today=new Date().toDateString();
+  return state.sales.filter(s=> new Date(s.date).toDateString()===today)
+    .reduce((sum,s)=> sum + s.total, 0);
+}
+function customerBalances(){
+  const map={};
+  state.sales.filter(s=>s.paymentType==='debt').forEach(s=>{
+    map[s.customerName]=(map[s.customerName]||0) + (s.total - (s.amountPaidNow||0));
+  });
+  state.payments.forEach(p=>{
+    map[p.customerName]=(map[p.customerName]||0) - p.amount;
+  });
+  return Object.entries(map).map(([name,bal])=>({name,bal})).filter(c=>Math.abs(c.bal)>0.5)
+    .sort((a,b)=> b.bal-a.bal);
+}
+function totalDebtOutstanding(){
+  return customerBalances().reduce((s,c)=> s + Math.max(0,c.bal), 0);
+}
+function salesByDay(n){
+  const out=[];
+  for(let i=n-1;i>=0;i--){
+    const d=new Date(); d.setDate(d.getDate()-i); d.setHours(0,0,0,0);
+    const dEnd=new Date(d); dEnd.setHours(23,59,59,999);
+    const total=state.sales.filter(s=>{const t=new Date(s.date); return t>=d && t<=dEnd;})
+      .reduce((sum,s)=>sum+s.total,0);
+    out.push({label: ethDate(d,{month:'short',day:'numeric'}), total});
+  }
+  return out;
+}
+function salesByMonth(n){
+  const out=[];
+  for(let i=n-1;i>=0;i--){
+    const d=new Date(); d.setMonth(d.getMonth()-i);
+    const y=d.getFullYear(), m=d.getMonth();
+    const total=state.sales.filter(s=>{const t=new Date(s.date); return t.getFullYear()===y && t.getMonth()===m;})
+      .reduce((sum,s)=>sum+s.total,0);
+    out.push({label: ethDate(d,{month:'short'}), total});
+  }
+  return out;
+}
+
+/* ---------------- sheet (modal) ---------------- */
+function openSheet(html){
+  document.getElementById('sheetBody').innerHTML = html;
+  document.getElementById('overlay').classList.add('open');
+}
+function closeSheet(){ document.getElementById('overlay').classList.remove('open'); }
+document.getElementById('overlay').addEventListener('click', e=>{ if(e.target.id==='overlay') closeSheet(); });
+
+/* ---------------- rendering ---------------- */
+let currentTab='dash';
+let reportMode='week';
+function setTab(t){
+  currentTab=t;
+  document.querySelectorAll('nav.tabbar button').forEach(b=> b.classList.toggle('active', b.dataset.tab===t));
+  render();
+}
+document.querySelectorAll('nav.tabbar button').forEach(b=> b.addEventListener('click', ()=> setTab(b.dataset.tab)));
+
+function render(){
+  const v=document.getElementById('view');
+  if(currentTab==='dash') v.innerHTML=renderDash();
+  else if(currentTab==='products') v.innerHTML=renderProducts();
+  else if(currentTab==='sales') v.innerHTML=renderSales();
+  else if(currentTab==='debt') v.innerHTML=renderDebt();
+  else if(currentTab==='settings') v.innerHTML=renderSettings();
+  attachViewHandlers();
+}
+
+function renderDash(){
+  const low = state.products.filter(p=> stockOf(p.id) <= (p.lowStock||0));
+  const data = reportMode==='month' ? salesByMonth(6) : salesByDay(7);
+  const max = Math.max(1, ...data.map(d=>d.total));
+  return `
+  <div class="dash-grid">
+    <div class="dash-card gold"><div class="lbl">የክምችት ዋጋ (በዋጋ ግዢ)</div><div class="val mono">${fmt(totalStockValue())}</div></div>
+    <div class="dash-card green"><div class="lbl">ጠቅላላ ትርፍ</div><div class="val mono">${fmt(totalProfit())}</div></div>
+    <div class="dash-card"><div class="lbl">የዛሬ ሽያጭ</div><div class="val mono">${fmt(todaySalesTotal())}</div></div>
+    <div class="dash-card rust"><div class="lbl">ያልተከፈለ ዱቤ</div><div class="val mono">${fmt(totalDebtOutstanding())}</div></div>
+  </div>
+  <div class="hatch" style="margin:14px 18px;width:calc(100% - 36px)"></div>
+  <section style="padding-top:0">
+    <div class="section-title">ሽያጭ ሪፖርት</div>
+    <div class="card">
+      <div class="chart-toggle">
+        <button data-report="week" class="${reportMode==='week'?'active':''}">ሳምንታዊ (7 ቀን)</button>
+        <button data-report="month" class="${reportMode==='month'?'active':''}">ወርሃዊ (6 ወር)</button>
+      </div>
+      <div class="bar-chart">
+        ${data.map(d=>`
+          <div class="bar-col">
+            <div class="bar" style="height:${Math.round((d.total/max)*100)}%"></div>
+            <div class="bar-lbl">${d.label}</div>
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="section-title">የቀነሰ ክምችት ማስጠንቀቂያ</div>
+    ${low.length? low.map(p=>`
+      <div class="card row">
+        <div><div class="prod-name">${p.name}</div><div class="prod-meta">ቀሪ: ${stockOf(p.id)} ${p.unit}</div></div>
+        <span class="pill debt">ዝቅተኛ</span>
+      </div>`).join('') : `<div class="empty">ምንም ዝቅተኛ ክምችት የለም 👍</div>`}
+    <div class="section-title">የቅርብ ጊዜ ሽያጮች</div>
+    ${recentSalesHtml(5)}
+  </section>`;
+}
+
+function recentSalesHtml(n){
+  const list=[...state.sales].sort((a,b)=> new Date(b.date)-new Date(a.date)).slice(0,n);
+  if(!list.length) return `<div class="empty">እስካሁን ሽያጭ አልተመዘገበም</div>`;
+  return list.map(s=>`
+    <div class="card">
+      <div class="row"><span class="prod-name">${s.productName}</span><span class="pill ${s.paymentType}">${s.paymentType==='debt'?'ዱቤ':'ጥሬ ገንዘብ'}</span></div>
+      <div class="row"><span class="prod-meta">${s.customerName||'ደንበኛ አልተመዘገበም'} · ${s.qty} ${s.unit}</span><span class="mono">${fmt(s.total)}</span></div>
+    </div>`).join('');
+}
+
+function renderProducts(){
+  const histBtn = `<div style="padding:6px 18px 0"><button class="btn btn-outline btn-sm" id="viewPurchaseHist" style="width:100%">📜 ግዢ ታሪክ ይመልከቱ</button></div>`;
+  if(!state.products.length) return histBtn + `<section><div class="empty">ገና ምንም እቃ አልተመዘገበም። ከታች ባለው + ተጭነው ይጀምሩ።</div></section>`;
+  return histBtn + `<section>${state.products.map(p=>{
+    const stock=stockOf(p.id);
+    const max = Math.max(stock, (p.lowStock||0)*3, 10);
+    const pct = Math.min(100, Math.round((stock/max)*100));
+    const level = stock<=(p.lowStock||0) ? 'var(--rust)' : (pct<50?'var(--gold)':'var(--green)');
+    return `
+    <div class="card">
+      <div class="silo-wrap">
+        <div class="silo"><div class="fill" style="height:${pct}%;background:${level}"></div></div>
+        <div style="flex:1">
+          <div class="row"><span class="prod-name">${p.name}</span><span class="mono">${stock} ${p.unit}</span></div>
+          <div class="prod-meta">ግዢ ${fmt(p.costPrice)} · ሽያጭ ${fmt(p.sellPrice)} /${p.unit}</div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-outline btn-sm" data-act="purchase" data-id="${p.id}">📥 ግዢ ጨምር</button>
+        <button class="btn btn-outline btn-sm" data-act="editProd" data-id="${p.id}">✎ አርትዕ</button>
+        <button class="btn btn-outline btn-sm" data-act="delProd" data-id="${p.id}">🗑</button>
+      </div>
+    </div>`;
+  }).join('')}</section>`;
+}
+
+function renderSales(){
+  if(!state.products.length) return `<section><div class="empty">መጀመሪያ ወደ 'እቃዎች' ሄደው ቢያንስ አንድ እቃ ይመዝግቡ።</div></section>`;
+  return `<section>
+    <div class="section-title">ሁሉም ሽያጮች</div>
+    ${state.sales.length? [...state.sales].sort((a,b)=>new Date(b.date)-new Date(a.date)).map(s=>`
+      <div class="card">
+        <div class="row"><span class="prod-name">${s.productName}</span><span class="pill ${s.paymentType}">${s.paymentType==='debt'?'ዱቤ':'ጥሬ ገንዘብ'}</span></div>
+        <div class="row"><span class="prod-meta">${s.customerName||'—'} · ${s.qty} ${s.unit} · ${ethDate(new Date(s.date))}</span></div>
+        <div class="row"><span class="prod-meta">ትርፍ: <span class="mono">${fmt(s.profit)}</span></span><span class="mono" style="font-weight:600">${fmt(s.total)}</span></div>
+        <div class="btn-row"><button class="btn btn-outline btn-sm" data-act="delSale" data-id="${s.id}">🗑 ሰርዝ</button></div>
+      </div>`).join('') : `<div class="empty">እስካሁን ሽያጭ አልተመዘገበም</div>`}
+  </section>`;
+}
+
+function renderDebt(){
+  const list=customerBalances();
+  return `<section>
+    <div class="section-title">የደንበኞች ዱቤ ሂሳብ</div>
+    ${list.length? list.map(c=>`
+      <div class="card">
+        <div class="row"><span class="prod-name">${c.name}</span><span class="mono" style="color:${c.bal>0?'var(--rust)':'var(--green)'}">${fmt(c.bal)}</span></div>
+        <div class="btn-row"><button class="btn btn-green btn-sm" data-act="payDebt" data-name="${encodeURIComponent(c.name)}">💵 ክፍያ ተቀበል</button></div>
+      </div>`).join('') : `<div class="empty">ምንም ያልተከፈለ ዱቤ የለም 🎉</div>`}
+  </section>`;
+}
+
+function renderSettings(){
+  const s=state.settings;
+  return `<section>
+    <div class="section-title">Telegram ባክአፕ</div>
+    <div class="card">
+      <label>Bot Token</label>
+      <input id="botToken" placeholder="123456:ABC-..." value="${s.botToken||''}">
+      <label>Chat ID (ግሩፕ ID)</label>
+      <input id="chatId" placeholder="-123456789" value="${s.chatId||''}">
+      <small class="hint">ቦት ፍጠር በ @BotFather እና Chat ID በ @userinfobot ማግኘት ይቻላል። ለግሩፕ ከሆነ ቦቱን ወደ ግሩፑ ጨምረው Chat ID ያግኙ (አብዛኛውን ጊዜ በአሉታዊ ቁጥር ይጀምራል፣ ለምሳሌ -123456789)።</small>
+      <label style="display:flex; align-items:center; gap:8px; margin-top:10px; cursor:pointer;">
+        <input type="checkbox" id="autoBackup" style="width:auto;" ${s.autoBackup?'checked':''}>
+        <span style="font-size:13px;">🔄 እያንዳንዱ ምዝገባ (ግዢ/ሽያጭ/ክፍያ) ላይ በራስ-ሰር ወደ ቴሌግራም ላክ</span>
+      </label>
+      <div class="btn-row">
+        <button class="btn btn-gold btn-sm" id="saveTg">አስቀምጥ</button>
+        <button class="btn btn-outline btn-sm" id="sendBackup">📤 ባክአፕ ላክ</button>
+      </div>
+    </div>
+    <div class="section-title">ውሂብ መልስ (Restore)</div>
+    <div class="card">
+      <label>ከፋይል ውሂብ ስቀል (.json)</label>
+      <input type="file" id="restoreFile" accept="application/json">
+      <small class="hint">ከቴሌግራም ያወረዱትን ባክአፕ ፋይል እዚህ ይስቀሉ።</small>
+    </div>
+    <div class="section-title">ሙሉ ውሂብ አጥፋ</div>
+    <div class="card">
+      <button class="btn btn-rust" id="wipeAll">ሁሉንም ውሂብ ሰርዝ</button>
+    </div>
+  </section>`;
+}
+
+/* ---------------- forms ---------------- */
+function formProduct(existing){
+  const p=existing||{};
+  return `
+  <div class="sheet-head"><h3>${existing?'እቃ አርትዕ':'አዲስ እቃ'}</h3><span data-close>✕</span></div>
+  <label>የእቃው ስም</label><input id="f_name" value="${p.name||''}" placeholder="ለምሳሌ፦ የዶሮ መኖ ስታርተር">
+  <label>መለኪያ (ኩንታል/ኪግ/ከረጢት)</label><input id="f_unit" value="${p.unit||'ኩንታል'}">
+  <label>የግዢ ዋጋ (በ1 ${p.unit||'ኩንታል'})</label><input id="f_cost" type="number" step="any" value="${p.costPrice||''}">
+  <label>የሽያጭ ዋጋ (በ1 ${p.unit||'ኩንታል'})</label><input id="f_sell" type="number" step="any" value="${p.sellPrice||''}">
+  <label>የመነሻ ክምችት ${existing?'(ተጨማሪ ክምችት ለመጨመር ከ"ግዢ ጨምር" ተጠቀም)':''}</label>
+  <input id="f_stock" type="number" step="any" value="${existing?stockOf(p.id):''}" ${existing?'disabled':''}>
+  <label>ዝቅተኛ ክምችት ማስጠንቀቂያ ደረጃ</label><input id="f_low" type="number" step="any" value="${p.lowStock||0}">
+  <button class="btn btn-gold" id="saveProd" data-id="${p.id||''}">አስቀምጥ</button>`;
+}
+function formPurchase(pid){
+  const p=state.products.find(x=>x.id===pid);
+  return `
+  <div class="sheet-head"><h3>ግዢ ጨምር — ${p.name}</h3><span data-close>✕</span></div>
+  <label>ብዛት (${p.unit})</label><input id="pu_qty" type="number" step="any">
+  <label>የግዢ ዋጋ በ1 ${p.unit} (ባዶ ከሆነ ነባሩ ይቆያል)</label><input id="pu_cost" type="number" step="any" placeholder="${p.costPrice}">
+  <label>አቅራቢ (Supplier) — አማራጭ</label><input id="pu_supplier" placeholder="የአቅራቢ ስም">
+  <button class="btn btn-gold" id="savePurchase" data-id="${pid}">አስቀምጥ</button>`;
+}
+function formSale(){
+  if(!state.products.length) return `<div class="sheet-head"><h3>ሽያጭ</h3><span data-close>✕</span></div><div class="empty">መጀመሪያ እቃ ይመዝግቡ</div>`;
+  const opts=state.products.map(p=>`<option value="${p.id}">${p.name} (ቀሪ ${stockOf(p.id)} ${p.unit})</option>`).join('');
+  return `
+  <div class="sheet-head"><h3>አዲስ ሽያጭ</h3><span data-close>✕</span></div>
+  <label>እቃ</label><select id="s_prod">${opts}</select>
+  <label>ብዛት</label><input id="s_qty" type="number" step="any">
+  <label>የደንበኛ ስም</label><input id="s_cust" placeholder="ስም (ለዱቤ አስፈላጊ)">
+  <label>የክፍያ ዓይነት</label>
+  <select id="s_type"><option value="cash">ጥሬ ገንዘብ</option><option value="debt">ዱቤ</option></select>
+  <div id="s_advWrap" style="display:none">
+    <label>አሁን የተከፈለ ቅድሚያ ክፍያ (ካለ)</label><input id="s_adv" type="number" value="0">
+  </div>
+  <button class="btn btn-gold" id="saveSale">መዝግብ</button>`;
+}
+function formPurchaseHistory(){
+  const list=[...state.purchases].sort((a,b)=> new Date(b.date)-new Date(a.date));
+  return `
+  <div class="sheet-head"><h3>ግዢ ታሪክ</h3><span data-close>✕</span></div>
+  ${list.length? list.map(pu=>`
+    <div class="card">
+      <div class="row"><span class="prod-name">${pu.productName||'—'}</span><span class="mono">${fmt(pu.qty*pu.costPrice)}</span></div>
+      <div class="row"><span class="prod-meta">${pu.qty} ${pu.unit||''} · ${fmt(pu.costPrice)}/${pu.unit||''}</span><span class="prod-meta">${ethDate(new Date(pu.date))}</span></div>
+      ${pu.supplier? `<div class="prod-meta">አቅራቢ፦ ${pu.supplier}</div>` : ''}
+      <div class="btn-row"><button class="btn btn-outline btn-sm" data-act="delPurchase" data-id="${pu.id}">🗑 ሰርዝ</button></div>
+    </div>`).join('') : `<div class="empty">እስካሁን ግዢ አልተመዘገበም</div>`}`;
+}
+
+function formPayDebt(name){
+  const list=customerBalances();
+  const c=list.find(x=>x.name===name);
+  return `
+  <div class="sheet-head"><h3>ክፍያ — ${name}</h3><span data-close>✕</span></div>
+  <p class="prod-meta">የቀረ ዱቤ: <span class="mono">${fmt(c?c.bal:0)}</span></p>
+  <label>የተከፈለ መጠን</label><input id="pay_amt" type="number">
+  <button class="btn btn-green" id="savePay" data-name="${encodeURIComponent(name)}">አስቀምጥ</button>`;
+}
+
+/* ---------------- event handling ---------------- */
+document.getElementById('fabAdd').addEventListener('click', ()=>{
+  if(currentTab==='products') openSheet(formProduct());
+  else if(currentTab==='sales') { openSheet(formSale()); bindSaleTypeToggle(); }
+  else if(currentTab==='debt') toast('ደንበኛ ላይ ተጭነው ክፍያ ያስመዝግቡ');
+  else openSheet(formProduct());
+});
+
+function bindSaleTypeToggle(){
+  const sel=document.getElementById('s_type');
+  if(!sel) return;
+  sel.addEventListener('change', ()=>{
+    document.getElementById('s_advWrap').style.display = sel.value==='debt' ? 'block':'none';
+  });
+}
+
+function attachViewHandlers(){
+  document.querySelectorAll('[data-report]').forEach(b=> b.addEventListener('click', ()=>{ reportMode=b.dataset.report; render(); }));
+  const histBtn=document.getElementById('viewPurchaseHist');
+  if(histBtn) histBtn.addEventListener('click', ()=> openSheet(formPurchaseHistory()));
+  document.querySelectorAll('[data-act="purchase"]').forEach(b=> b.addEventListener('click', ()=> openSheet(formPurchase(b.dataset.id))));
+  document.querySelectorAll('[data-act="editProd"]').forEach(b=> b.addEventListener('click', ()=>{
+    const p=state.products.find(x=>x.id===b.dataset.id);
+    openSheet(formProduct(p));
+  }));
+  document.querySelectorAll('[data-act="delProd"]').forEach(b=> b.addEventListener('click', ()=>{
+    if(confirm('ይህን እቃ መሰረዝ ይፈልጋሉ?')){
+      state.products=state.products.filter(p=>p.id!==b.dataset.id);
+      save(); render(); toast('ተሰርዟል');
+    }
+  }));
+  document.querySelectorAll('[data-act="delSale"]').forEach(b=> b.addEventListener('click', ()=>{
+    if(confirm('ይህን ሽያጭ መሰረዝ ይፈልጋሉ?')){
+      state.sales=state.sales.filter(s=>s.id!==b.dataset.id);
+      save(); render(); toast('ተሰርዟል');
+    }
+  }));
+  document.querySelectorAll('[data-act="payDebt"]').forEach(b=> b.addEventListener('click', ()=> openSheet(formPayDebt(decodeURIComponent(b.dataset.name)))));
+
+  const saveTg=document.getElementById('saveTg');
+  if(saveTg) saveTg.addEventListener('click', ()=>{
+    state.settings.botToken=document.getElementById('botToken').value.trim();
+    state.settings.chatId=document.getElementById('chatId').value.trim();
+    state.settings.autoBackup=document.getElementById('autoBackup').checked;
+    save(); toast('ተቀምጧል');
+  });
+  const sendBackup=document.getElementById('sendBackup');
+  if(sendBackup) sendBackup.addEventListener('click', ()=>sendTelegramBackup(false));
+  const restoreFile=document.getElementById('restoreFile');
+  if(restoreFile) restoreFile.addEventListener('change', handleRestoreFile);
+  const wipeAll=document.getElementById('wipeAll');
+  if(wipeAll) wipeAll.addEventListener('click', ()=>{
+    if(confirm('በእርግጥ ሁሉንም ውሂብ መሰረዝ ይፈልጋሉ? ይህ ተመልሶ አይመጣም!')){
+      state={products:[], purchases:[], sales:[], payments:[], settings:state.settings};
+      save(); render(); toast('ሁሉም ውሂብ ጠፍቷል');
+    }
+  });
+}
+
+document.getElementById('overlay').addEventListener('click', (e)=>{
+  if(e.target.dataset && e.target.dataset.close!==undefined) closeSheet();
+});
+document.getElementById('sheetBody').addEventListener('click', (e)=>{
+  if(e.target.hasAttribute('data-close')) closeSheet();
+  if(e.target.dataset.act==='delPurchase'){
+    if(confirm('ይህን ግዢ መሰረዝ ይፈልጋሉ?')){
+      state.purchases=state.purchases.filter(p=>p.id!==e.target.dataset.id);
+      save(); closeSheet(); render(); toast('ተሰርዟል');
+    }
+    return;
+  }
+
+  if(e.target.id==='saveProd'){
+    const id=e.target.dataset.id;
+    const name=document.getElementById('f_name').value.trim();
+    const unit=document.getElementById('f_unit').value.trim()||'ኪግ';
+    const cost=parseFloat(document.getElementById('f_cost').value)||0;
+    const sell=parseFloat(document.getElementById('f_sell').value)||0;
+    const low=parseFloat(document.getElementById('f_low').value)||0;
+    if(!name){ toast('ስም ያስፈልጋል'); return; }
+    if(id){
+      const p=state.products.find(x=>x.id===id);
+      p.name=name; p.unit=unit; p.costPrice=cost; p.sellPrice=sell; p.lowStock=low;
+      save(); closeSheet(); render(); toast('ተቀምጧል');
+      autoBackup(`እቃ ተስተካክሏል: ${name}`);
+    } else {
+      const stock=parseFloat(document.getElementById('f_stock').value)||0;
+      state.products.push({id:uid(), name, unit, costPrice:cost, sellPrice:sell, lowStock:low, initialStock:stock});
+      save(); closeSheet(); render(); toast('ተቀምጧል');
+      autoBackup(`አዲስ እቃ ተመዝግቧል: ${name}`);
+    }
+  }
+
+  if(e.target.id==='savePurchase'){
+    const pid=e.target.dataset.id;
+    const qty=parseFloat(document.getElementById('pu_qty').value);
+    const costIn=document.getElementById('pu_cost').value;
+    const supplier=document.getElementById('pu_supplier').value.trim();
+    if(!qty || qty<=0){ toast('ትክክለኛ ብዛት ያስገቡ'); return; }
+    const p=state.products.find(x=>x.id===pid);
+    if(costIn) p.costPrice=parseFloat(costIn);
+    state.purchases.push({id:uid(), productId:pid, productName:p.name, unit:p.unit, qty, costPrice:p.costPrice, supplier, date:new Date().toISOString()});
+    save(); closeSheet(); render(); toast('ግዢ ተመዝግቧል');
+    autoBackup(`ግዢ ተመዝግቧል: ${p.name} (${qty} ${p.unit})`);
+  }
+
+  if(e.target.id==='saveSale'){
+    const pid=document.getElementById('s_prod').value;
+    const qty=parseFloat(document.getElementById('s_qty').value);
+    const cust=document.getElementById('s_cust').value.trim();
+    const type=document.getElementById('s_type').value;
+    const adv=parseFloat(document.getElementById('s_adv')?.value)||0;
+    const p=state.products.find(x=>x.id===pid);
+    if(!qty || qty<=0){ toast('ትክክለኛ ብዛት ያስገቡ'); return; }
+    if(qty>stockOf(pid)){ toast('ከክምችት በላይ ነው! ('+stockOf(pid)+' ብቻ ቀርቷል)'); return; }
+    if(type==='debt' && !cust){ toast('ለዱቤ ሽያጭ የደንበኛ ስም ያስፈልጋል'); return; }
+    const total=qty*p.sellPrice;
+    const profit=(p.sellPrice-p.costPrice)*qty;
+    state.sales.push({id:uid(), productId:pid, productName:p.name, unit:p.unit, qty, sellPrice:p.sellPrice,
+      costPrice:p.costPrice, customerName:cust, paymentType:type, amountPaidNow: type==='debt'?adv:total,
+      total, profit, date:new Date().toISOString()});
+    save(); closeSheet(); render(); toast('ሽያጭ ተመዝግቧል');
+    autoBackup(`ሽያጭ ተመዝግቧል: ${p.name} (${qty} ${p.unit})${cust?' - ደንበኛ: '+cust:''}`);
+  }
+
+  if(e.target.id==='savePay'){
+    const name=decodeURIComponent(e.target.dataset.name);
+    const amt=parseFloat(document.getElementById('pay_amt').value);
+    if(!amt || amt<=0){ toast('ትክክለኛ መጠን ያስገቡ'); return; }
+    state.payments.push({id:uid(), customerName:name, amount:amt, date:new Date().toISOString()});
+    save(); closeSheet(); render(); toast('ክፍያ ተመዝግቧል');
+    autoBackup(`ክፍያ ተመዝግቧል: ${name} - ${fmt(amt)} ብር`);
+  }
+});
+
+/* ---------------- telegram backup / restore ---------------- */
+async function sendTelegramBackup(silent, label){
+  const {botToken, chatId}=state.settings;
+  if(!botToken || !chatId){ if(!silent) toast('መጀመሪያ Bot Token እና Chat ID ያስቀምጡ'); return; }
+  try{
+    const dataStr=JSON.stringify(state, null, 2);
+    const blob=new Blob([dataStr], {type:'application/json'});
+    const fd=new FormData();
+    fd.append('chat_id', chatId);
+    fd.append('document', blob, `feed-backup-${new Date().toISOString().slice(0,10)}.json`);
+    const when=ethDate(new Date(), {year:'numeric',month:'long',day:'numeric',hour:'numeric',minute:'numeric'});
+    const caption=label ? `🌾 ${label} — ${when}` : `🌾 የመኖ መዝገብ ባክአፕ — ${when}`;
+    fd.append('caption', caption);
+    const res=await fetch(`https://api.telegram.org/bot${botToken}/sendDocument`, {method:'POST', body:fd});
+    const json=await res.json();
+    if(json.ok){ if(!silent) toast('ባክአፕ በተሳካ ሁኔታ ተልኳል ✅'); }
+    else toast('ስህተት: '+(json.description||'አልተሳካም'));
+  }catch(err){ toast('የኔትወርክ ስህተት አጋጥሟል'); }
+}
+function autoBackup(label){
+  if(state.settings.autoBackup && state.settings.botToken && state.settings.chatId){
+    sendTelegramBackup(true, label);
+  }
+}
+function handleRestoreFile(e){
+  const file=e.target.files[0];
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onload=()=>{
+    try{
+      const parsed=JSON.parse(reader.result);
+      if(!parsed.products || !parsed.sales){ toast('ልክ ያልሆነ ፋይል'); return; }
+      if(confirm('ይህ ነባሩን ውሂብ ይተካዋል። ይቀጥሉ?')){
+        state=parsed;
+        save(); render(); toast('ውሂብ ተመልሷል ✅');
+      }
+    }catch(err){ toast('ፋይሉን ማንበብ አልተቻለም'); }
+  };
+  reader.readAsText(file);
+}
+
+render();
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(()=>{});
+  });
+}
+
+/* ---------------- direct PWA install (no manual "Add to Home") ---------------- */
+let deferredInstallPrompt = null;
+const installBanner = document.getElementById('installBanner');
+const installBtn = document.getElementById('installBtn');
+
+function isStandalone(){
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+}
+
+if (!isStandalone()) {
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    installBanner.style.display = 'flex';
+  });
+}
+
+if (installBtn) {
+  installBtn.addEventListener('click', async () => {
+    if (!deferredInstallPrompt) return;
+    installBanner.style.display = 'none';
+    deferredInstallPrompt.prompt();
+    const { outcome } = await deferredInstallPrompt.userChoice;
+    if (outcome === 'accepted') toast('በተሳካ ሁኔታ ተጭኗል ✅');
+    deferredInstallPrompt = null;
+  });
+}
+
+window.addEventListener('appinstalled', () => {
+  installBanner.style.display = 'none';
+  deferredInstallPrompt = null;
+  toast('መተግበሪያው ተጭኗል ✅');
+});
+</script>
+</body>
+</html>
